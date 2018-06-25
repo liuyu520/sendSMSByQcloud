@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kunlunsoft</groupId>
-    <artifactId>http_request_tool</artifactId>
+    <artifactId>sendSMSByQcloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
 
@@ -85,7 +85,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.yunma.autotest.AutoTestPanel</mainClass>
+                            <mainClass>com.kunlunsoft.sms.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
