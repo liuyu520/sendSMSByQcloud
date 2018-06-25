@@ -8,6 +8,7 @@ import com.github.qcloudsms.SmsSingleSenderResult;
 import com.github.qcloudsms.httpclient.HTTPException;
 import com.io.hw.json.HWJacksonUtils;
 import com.kunlunsoft.sms.dto.SmsParam;
+import com.string.widget.util.ValueWidget;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 
@@ -25,6 +26,12 @@ public class SmsSendUtil {
 
     public static BaseResponseDto sendSimpleSms(SmsParam smsParam, boolean real) {
         System.out.println(" :" + HWJacksonUtils.getJsonP(smsParam));
+        //校验 mobile
+        if (ValueWidget.isNullOrEmpty(smsParam.getMobile())) {
+            String msg = "手机号不能为空";
+            System.out.println(msg);
+            return new BaseResponseDto().setErrorMessage(msg);
+        }
         BaseResponseDto baseResponseDto = new BaseResponseDto();
         if (real) {
             try {
